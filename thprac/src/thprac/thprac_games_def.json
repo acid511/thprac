@@ -1391,7 +1391,7 @@
 	  "THPRAC_TH06_REP_RAND_SEED": [ "当前打开rep的初始种子", "rand seed for current rep", "現在のリプレイのシード値" ],
 
 	  "THPRAC_TH06_RANKLOCK_DOWN": [ "红魔乡自动miss/bomb后不掉rank", "EoSD no rank drop after miss/bomb", "紅魔郷: ミス/ボム時のランク低下を無くす" ],
-	  "THPRAC_INFLIVES_MAP": [ "将锁残修改为不疮", "map inf.lives to no continue", "@map inf.lives to no continue" ],
+	  "THPRAC_INFLIVES_MAP": [ "将锁残修改为不疮", "map inf.lives to no continue", "「残基が減らない」オプションを「満身創痍にならない」オプションに置き換え" ],
       "THPRAC_DISABLE_MASTER_AUTO": [ "自动禁用MASTER", "automatically disable master", "masterを自動的に無効化" ],
       "THPRAC_ENABLE_LOCK_TIMER_AUTO": [ "自动启用锁时计时", "automatically enable lock timer", "タイマーロックを自動的に有効化" ],
 	  "THPRAC_INGAMEINFO_ADV":["高级IGI功能","advanced igi","拡張igi"],
@@ -1432,10 +1432,10 @@
 	  "THPRAC_INGAMEINFO_TH14_BONUS_BOMB":["雷","B","B"],
 	  "THPRAC_INGAMEINFO_TH14_ITEMS_CNT":["道具量","items","アイテム:"],
 
-	  "THPRAC_INGAMEINFO_TH15_SHOW_SHOOTING_DOWN_RATE":["显示击破数","show shooting down","敵撃破率を表示"],
-	  "THPRAC_INGAMEINFO_TH15_SHOW_SHOOTING_DOWN_RATE2":["绀珠传显示击破数","LoLK show shooting down","紺珠伝: 敵撃破率を表示"],
-	  "THPRAC_INGAMEINFO_TH15_SHOOTING_DOWN_RATE":["击破数","shoot down","敵撃破率:"],
-	  "THPRAC_INGAMEINFO_TH15_PRODUCT":["乘积","product","成果:"],
+	  "THPRAC_INGAMEINFO_TH15_SHOW_SHOOTING_DOWN_RATE":["显示击破数","show shooting down","撃破率を表示"],
+	  "THPRAC_INGAMEINFO_TH15_SHOW_SHOOTING_DOWN_RATE2":["绀珠传显示击破数","LoLK show shooting down","紺珠伝: 撃破率を表示"],
+	  "THPRAC_INGAMEINFO_TH15_SHOOTING_DOWN_RATE":["击破数","shoot down","撃破率:"],
+	  "THPRAC_INGAMEINFO_TH15_PRODUCT":["乘积","product","ｸﾞﾚｲｽﾞx撃破率:"],
 
 
        "THPRAC_INGAMEINFO":["更多游戏信息","in game info","ゲーム内情報"],
@@ -1466,7 +1466,7 @@
        "THPRAC_INGAMEINFO_15_RE_TIMES":["Re数:","Retry:","リトライ:"],
 
        "THPRAC_INGAMEINFO_20_HYPER_COUNT":["hyper:","hyper:","異変攻撃:"],
-       "THPRAC_INGAMEINFO_20_HYPER_BREAK_COUNT":["撞hyper:","hyper break:","異変攻撃(被弾):"],
+       "THPRAC_INGAMEINFO_20_HYPER_BREAK_COUNT":["撞hyper:","hyper break:","霊撃:"],
        "THPRAC_INGAMEINFO_20_PYRAMID_COUNT":["Δ击破:","Δ killed:","Δ 破壊:"],
        "THPRAC_INGAMEINFO_20_PYRAMID_SUMMONED_COUNT":["Δ生成:","Δ summoned:","Δ 出現:"],
        "THPRAC_INGAMEINFO_20_PYRAMID_LV":["LV:","lv:","レベル:"],
@@ -10823,11 +10823,11 @@
       "TH20_PIV_OVERFLOW_FIX": [ "PIV溢出修复", "PIV overflow fix", "PIVオーバーフロー修正" ],
       "TH20_UNCAP_PIV": [ "移除PIV限制", "PIV uncap", "PIVキャップ解放" ],
       "TH20_UNCAP_SCORE": [ "移除分数限制", "Score uncap", "スコアキャップ解放" ],
-      "TH20_FAKE_UNLOCK_STONES": [ "解锁未获得的石", "Fake unlock stones", "未解放ストーン使用" ],
+      "TH20_FAKE_UNLOCK_STONES": [ "解锁未获得的石", "Fake unlock stones", "未解放の異変石の使用" ],
       "TH20_FAKE_UNLOCK_STONES_DESC": [
         "侧槽可选未解锁宝石。",
         "Allows you to select stones you haven't actually unlocked in the side slots.",
-        "未解放ストーンをサイドスロットに設定可能。"
+        "未解放の異変石をサブスロットに設定できるようにします。"
       ],
       "TH20_FIX_HITBOX": [ "修复玩家判定点缩放", "Fix player hitbox scale", "プレイヤーの当たり判定のスケールを修正" ],
       "TH20_FIX_HITBOX_DESC": [
@@ -10869,11 +10869,11 @@
       "TH20_MAINRPYFIX_SAVE_NO_ST1_HINT": [ "重放未从第 1 关开始。", "Replay was not started from stage 1.", "リプレイはステージ1から開始されていません。" ],
       "TH20_MAINRPYFIX_SAVE_SKIPPED_STAGE_HINT": [ "重放中至少有一个关卡缺少同步数据。", "Replay is missing sync data on at least one stage.", "リプレイに少なくとも1つのステージで同期データが欠けています。" ],
       "TH20_MAINRPYFIX_SELECTED_NO_TRANSITIONS": [ "所选重放没有关卡切换。", "Selected replay has no stage transitions.", "選択したリプレイにはステージトランジションがありません。" ],
-	  "TH20_DECREASE_EFF": [ "减少擦弹特效","Decrease graze effect","Decrease graze effect"],
+	  "TH20_DECREASE_EFF": [ "减少擦弹特效","Decrease graze effect","グレイズのエフェクトを減らす"],
 	  "TH20_FIX_BULLETHITBOX": [
         "修复弹幕判定",
         "fix bullet hitbox",
-        "弾幕判定を修復します"
+        "弾幕判定を修正"
       ],
       "TH20_EXTRA_RESOLUTION_FIX": [ "Extra关卡分辨率修复", "Extra Stage resolution fix", "Extraステージ解像度修正" ],
       "TH20_EXTRA_RESOLUTION_FIX_DESC": [ "如果游戏分辨率与录制replay时不同，Extra关卡的replay在渡里妮娜的四符（古老的光明会）处可能会爆炸（即与录制时不同步）。选择一个ex关卡的replay和可能的原始分辨率，然后检查replay是否同步，如果同步则保存已修复的副本。\n注意：无需保存文件也可以预览是否同步。\n修复好的重放将无论分辨率如何都保持同步。",
