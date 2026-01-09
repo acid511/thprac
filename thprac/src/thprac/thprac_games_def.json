@@ -1357,18 +1357,18 @@
 	  "THPRAC_TH18_CARD_5": [ "stage5 卡牌", "card for stage 5", "card for stage 5" ],
 	  "THPRAC_TH18_CARD_7": [ "stageEX 卡牌", "card for stage EX", "card for stage EX" ],
 
-	  "THPRAC_TH20_PIV_OVERFLOW_FIX": [ "锦上京PIV溢出修复", "FW PIV overflow fix", "FW PIVオーバーフロー修正" ],
-      "THPRAC_TH20_UNCAP_PIV": [ "锦上京移除PIV限制", "FW PIV uncap", "FW PIVキャップ解放" ],
-      "THPRAC_TH20_UNCAP_SCORE": [ "锦上京移除分数限制", "FW Score uncap", "FW スコアキャップ解放" ],
-      "THPRAC_TH20_FAKE_UNLOCK_STONES": [ "锦上京解锁未获得的石", "FW Fake unlock stones", "FW 未解放ストーン使用" ],
-      "THPRAC_TH20_UNLOCK_STONES_DESC": ["锦上京侧槽可选未解锁宝石。", "Allows you to select stones you haven't actually unlocked in the side slots.", "未解放ストーンをサイドスロットに設定可能。" ],
-	  "THPRAC_TH20_FIX_BULLETHITBOX": [ "锦上京修复弹幕判定","FW fix bullet hitbox","FW 弾幕判定を修復します"],
-	  "THPRAC_TH20_FIX_BULLETHITBOX_DESC": [ "锦上京游戏", "FW Game", "FW Game" ],
-	  "THPRAC_TH20_DECREASE_EFF": [ "锦上京减少擦弹特效","FW decrease graze effect","FW decrease graze effect"],
+	  "THPRAC_TH20_PIV_OVERFLOW_FIX": [ "锦上京PIV溢出修复", "FW PIV overflow fix", "FW: PIVオーバーフロー修正" ],
+      "THPRAC_TH20_UNCAP_PIV": [ "锦上京移除PIV限制", "FW PIV uncap", "FW: PIV上限解放" ],
+      "THPRAC_TH20_UNCAP_SCORE": [ "锦上京移除分数限制", "FW Score uncap", "FW: スコア上限解放" ],
+      "THPRAC_TH20_FAKE_UNLOCK_STONES": [ "锦上京解锁未获得的石", "FW Fake unlock stones", "FW: 未解放の異変石の使用" ],
+      "THPRAC_TH20_UNLOCK_STONES_DESC": ["锦上京侧槽可选未解锁宝石。", "Allows you to select stones you haven't actually unlocked in the side slots.", "未解放の異変石をサブスロットに設定できるようになります。" ],
+	  "THPRAC_TH20_FIX_BULLETHITBOX": [ "锦上京修复弹幕判定","FW fix bullet hitbox","FW: 弾幕判定を修正"],
+	  "THPRAC_TH20_FIX_BULLETHITBOX_DESC": [ "锦上京游戏", "FW Game", "@FW Game" ],
+	  "THPRAC_TH20_DECREASE_EFF": [ "锦上京减少擦弹特效","FW decrease graze effect","FW: グレイズのエフェクトを減らす"],
 
 
-	  "THPRAC_TH06_BACKGROUND_FIX": [ "红魔乡背景修复", "EoSD background fix", "EoSD background fix" ],
-	  "THPRAC_TH06_BACKGROUND_FIX_DESC": [ "当关闭弹幕虚影时不让蕾咪变蓝狗\n有可能让背景或UI变奇怪", "let Remilia not be blue when disables bullet shadow\nMight make bg or UI strange", "let Remilia not be blue when disables bullet shadow\nMight make bg or UI strange" ],
+	  "THPRAC_TH06_BACKGROUND_FIX": [ "红魔乡背景修复", "EoSD background fix", "紅魔郷: 背景を修正" ],
+	  "THPRAC_TH06_BACKGROUND_FIX_DESC": [ "当关闭弹幕虚影时不让蕾咪变蓝狗\n有可能让背景或UI变奇怪", "let Remilia not be blue when disables bullet shadow\nMight make bg or UI strange", "弾丸の影を無効化した際、レミリアが青くならないようにします。\n背景やUIに不具合が生じる場合があります。" ],
 
 	  "THPRAC_TH06_FIX_RAND_SEED": [ "红魔乡固定初始种子", "fix EoSD rand seed when begin", "fix EoSD rand seed when begin" ],
 	  "THPRAC_TH06_RAND_SEED": [ "初始种子", "rand seed", "rand seed" ],
