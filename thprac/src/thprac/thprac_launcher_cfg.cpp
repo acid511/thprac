@@ -2796,7 +2796,7 @@ private:
             ImGui::NewLine();
             ImGui::TextUnformatted(S(TH_ABOUT_AUTHOR));
             ImGui::TextUnformatted(S(TH_ABOUT_BRANCH));
-            TextLink(S(TH_ABOUT_WEBSITE), L"https://github.com/RUEEE/thprac");
+            TextLink(S(TH_ABOUT_WEBSITE), L"https://github.com/acid511/thprac");
             ImGui::NewLine();
             ImGui::Text(S(TH_ABOUT_THANKS), "You!");
         }

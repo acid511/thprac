@@ -60,7 +60,7 @@ private:
         TRIGGER_ERR_EXEC,
     };
 
-    
+
 #define DEFAULT_KEY "Default##1"
 #define DEFAULT_LINKS R"123({
 "__is_open__" : true,
@@ -82,6 +82,7 @@ private:
 "--------------------------------"            :" ",
 "github(TWC)"                                 :"https://github.com/touhouworldcup/thprac/",
 "github(R)"                                   :"https://github.com/RUEEE/thprac",
+"github(a)"                                   :"https://github.com/acid511/thprac",
 "--------------------------------"            :" ",
 "东方正作STG的各种设置和插件指南"             :"https://www.bilibili.com/opus/974491967425609731",
 "东方STG常用工具、网址等资源汇总"             :"https://www.bilibili.com/opus/411007775865615066",
