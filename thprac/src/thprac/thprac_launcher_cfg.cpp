@@ -1337,7 +1337,7 @@ private:
         updObj.mChkUpdStatus = STATUS_CHKING_OR_UPDATING;
 
         std::vector<uint8_t> updateJson;
-        DWORD status = DownloadSingleFile(L"https://raw.githubusercontent.com/touhouworldcup/thprac/master/thprac_version.json", updateJson);
+        DWORD status = DownloadSingleFile(L"https://raw.githubusercontent.com/acid511/thprac/master/thprac_version.json", updateJson);
         if (status)
             updObj.mChkUpdStatus = STATUS_INTERNET_ERROR;
         else
@@ -2228,7 +2228,7 @@ private:
                 }
             }
         }
-        
+
         if (!*listening) {
             if (ImGui::Button(current_string.c_str()) && !block_input)
                 *listening = true;
@@ -2237,7 +2237,7 @@ private:
             if (ImGui::Button(S(THPRAC_HOTKEY_CANCEL)))
                 *listening = false; // cancel on click
         }
-        
+
         bool changed = false;
         if (*listening) {
             ImGui::SetItemDefaultFocus();
@@ -2296,13 +2296,13 @@ private:
     //BorderBreak,
     //Dying, // life < life_cap
     //Release,
-        int normal_key          = '0', 
-            miss_key            = '1', 
-            borderBreak_key     = '1', 
+        int normal_key          = '0',
+            miss_key            = '1',
+            borderBreak_key     = '1',
             releasing_key       = '2',
-            bomb_key            = '2', 
+            bomb_key            = '2',
             hyper_key           = '2',
-            dying_key           = '3'; 
+            dying_key           = '3';
         LauncherSettingGet("l2d_reset_key"     , normal_key     );
         LauncherSettingGet("l2d_miss_key"       , miss_key       );
         LauncherSettingGet("l2d_borderBreak_key", borderBreak_key);
@@ -2330,7 +2330,7 @@ private:
         GuiLive2DHotkeyEdit(S(THPRAC_L2D_KEYBIND_RELEASING)     , "l2d_releasing_key"   ,true   , &listeningKeys[3],   blockKeys[3]);
         GuiLive2DHotkeyEdit(S(THPRAC_L2D_KEYBIND_BOMB)          , "l2d_bomb_key"        ,true   , &listeningKeys[4],   blockKeys[4]);
         GuiLive2DHotkeyEdit(S(THPRAC_L2D_HYPER)                 , "l2d_hyper_key"       ,true   , &listeningKeys[5],   blockKeys[5],S(THPRAC_L2D_KEYBIND_HYPER_DESC));
-                                                                                                               
+
         GuiLive2DHotkeyEdit(S(THPRAC_L2D_KEYBIND_RESET)         , "l2d_reset_key"       ,true   , &listeningKeys[0],   blockKeys[0]);
         GuiLive2DHotkeyEdit(S(THPRAC_L2D_KEYBIND_DYING)         , "l2d_dying_key"       ,true   , &listeningKeys[6],   blockKeys[6],S(THPRAC_L2D_KEYBIND_DYING_DESC));
 
@@ -2401,7 +2401,7 @@ private:
             //         float width = 1.5f;
             //         float diameter = ImGui::GetFrameHeight() * height;
             //         float alpha = ImGui::GetStyle().Alpha;
-            // 
+            //
             //         static float slider_f = g_hKeyboardHook == nullptr ? 1 : 0;
             //         float slider_target = g_hKeyboardHook == nullptr ? 1 : 0;
             //         slider_f = slider_f * 0.75f + slider_target * 0.25f;
@@ -2409,40 +2409,40 @@ private:
             //             slider_f = 1.0f;
             //         if (slider_f < 0.02f)
             //             slider_f = 0.0f;
-            // 
+            //
             //         ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 100.0f);
             //         ImGui::PushStyleVar(ImGuiStyleVar_GrabRounding, 100.0f);
-            // 
+            //
             //         ImVec2 cursor_pos = ImGui::GetCursorPos();
             //         ImGui::SetNextItemWidth(1.8f * ImGui::GetFrameHeight());
-            // 
+            //
             //         ImVec4 toggle_bg;
             //         toggle_bg.x = toggle_bg_enabled.x * slider_f + (1.0f - slider_f) * toggle_bg_disabled.x;
             //         toggle_bg.y = toggle_bg_enabled.y * slider_f + (1.0f - slider_f) * toggle_bg_disabled.y;
             //         toggle_bg.z = toggle_bg_enabled.z * slider_f + (1.0f - slider_f) * toggle_bg_disabled.z;
             //         toggle_bg.w = toggle_bg_enabled.w * slider_f + (1.0f - slider_f) * toggle_bg_disabled.w;
-            // 
+            //
             //         ImVec2 pos_bg = { cursor_pos.x, cursor_pos.y + ImGui::GetFrameHeight() * 0.5f * (1.0f - height) };
             //         ImVec2 pos_btn = { pos_bg.x + slider_f * diameter * (width - 1.0f) + 0.5f * diameter * (1.0f - btn_sz), pos_bg.y + 0.5f * diameter * (1.0f - btn_sz) };
             //         ImVec2 sz_bg = { diameter * width, diameter };
             //         ImVec2 sz_btn = { diameter * btn_sz, diameter * btn_sz };
-            // 
+            //
             //         ImGui::BeginDisabled();
             //         ImGui::PushStyleVar(ImGuiStyleVar_Alpha, alpha);
-            // 
+            //
             //         ImGui::SetCursorPos(pos_bg);
             //         ImGui::PushStyleColor(ImGuiCol_Button, toggle_bg);
             //         ImGui::Button(" ##wtoggle_bk", sz_bg);
             //         ImGui::PopStyleColor();
-            // 
+            //
             //         ImGui::SetCursorPos(pos_btn);
             //         ImGui::PushStyleColor(ImGuiCol_Button, toggle_btn);
             //         ImGui::Button(" ##wtoggle_bt", sz_btn);
             //         ImGui::PopStyleColor();
-            // 
+            //
             //         ImGui::PopStyleVar();
             //         ImGui::EndDisabled();
-            // 
+            //
             //         ImGui::SetCursorPos(pos_bg);
             //         if (ImGui::InvisibleButton("##win_key_btn", sz_bg)) {
             //             if (g_hKeyboardHook) {
@@ -2524,7 +2524,7 @@ private:
                 mKeyboardAPISetting.Gui(S(THPRAC_KEYBOARD_API), S(THPRAC_KEYBOARD_API_SETTINGS), S(THPRAC_KEYBOARD_API_SETTINGS_DESC));
                 KeyBindSettings();
 
-                
+
             }
             if ((mKeyboardAPISetting.Get() == 2 || mKeyboardAPISetting.Get() == 3) && mKeyboardHook.Get())
             {
@@ -2623,7 +2623,7 @@ private:
             mCfgEnableTH20_DecreaseGrazeEffect_autoly.Gui(S(THPRAC_TH20_DECREASE_EFF));
             ImGui::Separator();
             ImGui::Text(S(THPRAC_KB));
-            
+
             if (ImGui::TreeNode(S(THPRAC_KB_SHOW))) {
                 KeyRectStyle style;
                 style.separated = mKb_Separated.Get();
@@ -2891,7 +2891,7 @@ private:
     THCfgCheckbox mAlwaysSave_07 { "always_save_score_hist_07", false };
     THCfgCheckbox mForceLS_08 { "forceLS_08", false };
     THCfgText mName_06 { "autoName_06", "", 9};
-    
+
     THCfgCheckbox mRecordGameTime { "recordGameTime", false };
     THCfgFloat mGameTimeTooLongTime { "gameTimeTooLong_Time", 3.0f, 0.001f,1000.0f };
     THCfgCheckbox mGameTimeTooLongSE { "gameTimeTooLong_SE", false };
