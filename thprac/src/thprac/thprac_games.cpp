@@ -87,7 +87,7 @@ struct InputOpt
     SOCD_Setting g_socd_setting;
 
     bool use_get_device_data = false;
-    
+
     enum class KeyboardAPI { Default_API = 0,Force_win32KeyAPI,Force_dinput8KeyAPI,Force_RawInput};
     KeyboardAPI g_keyboardAPI;
 
@@ -97,7 +97,7 @@ struct InputOpt
     HRESULT(STDMETHODCALLTYPE* realDIRelease)(LPDIRECTINPUT8 thiz);
     HRESULT(STDMETHODCALLTYPE* realEnumDevices) (LPDIRECTINPUT8 thiz, DWORD dwDevType, LPDIENUMDEVICESCALLBACKW lpCallback, LPVOID pvRef, DWORD dwFlags);
     HRESULT(STDMETHODCALLTYPE* realCreateDevice) (LPDIRECTINPUT8 thiz, const GUID& guid, LPDIRECTINPUTDEVICE8W* lpddevice, LPUNKNOWN lpunk);
-    
+
     LPDIRECTINPUTDEVICE8 ddevice;
     HRESULT(STDMETHODCALLTYPE* realAcquire)(LPDIRECTINPUTDEVICE8 thiz);
     HRESULT(STDMETHODCALLTYPE* realPoll)(LPDIRECTINPUTDEVICE8 thiz);
@@ -320,7 +320,7 @@ MMRESULT WINAPI joyGetDevCapsA_Changed(UINT uJoyID, LPJOYCAPSA pjc, UINT cbjc) {
         return MMSYSERR_NODRIVER;
     return g_input_opt.g_realJoyGetDevCapsA(uJoyID, pjc, cbjc);
 }
-MMRESULT WINAPI joyGetPosEx_Changed(UINT uJoyID, LPJOYINFOEX pji) { 
+MMRESULT WINAPI joyGetPosEx_Changed(UINT uJoyID, LPJOYINFOEX pji) {
     if (g_input_opt.g_disable_joy)
         return MMSYSERR_NODRIVER;
 
@@ -485,7 +485,7 @@ struct Live2DOption {
 
     int expression_num;
     bool is_dying_expression;
-    
+
     uint32_t last_time_ms;
     uint32_t dying_expression_last_time_ms;
 }g_l2dState;
@@ -633,7 +633,7 @@ void Live2D_ChangeState(Live2D_InputType l2dInput)
 
 void ClearDinputData(bool inactivate) {
     if (g_input_opt.g_keyboardAPI == InputOpt::KeyboardAPI::Force_dinput8KeyAPI && g_input_opt.ddevice) {
-       
+
         while (true) {
             DWORD dwItems = 32;
             DIDEVICEOBJECTDATA rgdod[32];
@@ -768,7 +768,7 @@ void InitInput()
         if (g_input_opt.is_ri_inited)
         {
             RAWINPUTDEVICE Rid;
-            Rid.usUsagePage = 0x01; 
+            Rid.usUsagePage = 0x01;
             Rid.usUsage = 0x06;
             Rid.dwFlags = RIDEV_REMOVE;
             Rid.hwndTarget = NULL;
@@ -928,7 +928,7 @@ LB_FINAL:
     static uint32_t keyBoard_press_time[4] = { 0 };
 
     cur_time++;
-    
+
     if (IS_KEY_DOWN(keyBoardState[VK_LEFT]) && !IS_KEY_DOWN(last_keyBoardState[VK_LEFT]))
         keyBoard_press_time[K_LEFT] = cur_time;
     if (IS_KEY_DOWN(keyBoardState[VK_RIGHT]) && !IS_KEY_DOWN(last_keyBoardState[VK_RIGHT]))
@@ -939,8 +939,8 @@ LB_FINAL:
         keyBoard_press_time[K_DOWN] = cur_time;
 
     memcpy_s(last_keyBoardState, 256, keyBoardState, 256);
-    
-    
+
+
     if (IS_KEY_DOWN(keyBoardState[VK_LEFT]) && IS_KEY_DOWN(keyBoardState[VK_RIGHT])){
         if (g_input_opt.g_socd_setting == InputOpt::SOCD_Setting::SOCD_2)
         {
@@ -953,7 +953,7 @@ LB_FINAL:
             keyBoardState[VK_RIGHT] = 0;
             keyBoardState[VK_LEFT] = 0;
         }
-       
+
     }
     if (IS_KEY_DOWN(keyBoardState[VK_DOWN]) && IS_KEY_DOWN(keyBoardState[VK_UP])) {
         if (g_input_opt.g_socd_setting == InputOpt::SOCD_Setting::SOCD_2) {
@@ -975,7 +975,7 @@ HRESULT STDMETHODCALLTYPE GetDeviceState_Changed(LPDIRECTINPUTDEVICE8 thiz, DWOR
     if (num != 256) { // no keyboard
         if (g_input_opt.g_disable_joy)
             return DIERR_INPUTLOST; // 8007001E
-        
+
         HRESULT res = -1;
         res = g_input_opt.realGetDeviceState(thiz, num, state);
 
@@ -1174,7 +1174,7 @@ void SetDpadHook(uintptr_t addr, size_t instr_len)
     //     .callback = IDirectInputDevice8_GetDeviceState_VEHHook,
     //     .data = PatchData()
     // };
-    // 
+    //
     // dpad_hook.addr = addr;
     // dpad_hook.data.hook.instr_len = static_cast<uint8_t>(instr_len);
     // dpad_hook.Setup();
@@ -1210,7 +1210,7 @@ void ChangeBGMSpeed(LPDIRECTSOUNDBUFFER thiz = nullptr)
             }
         }
     }
-    
+
 }
 
 HRESULT STDMETHODCALLTYPE SetFormat_Changed (LPDIRECTSOUNDBUFFER thiz, LPCWAVEFORMATEX pcfxFormat)
@@ -1437,7 +1437,7 @@ void GameGuiInit(game_gui_impl impl, int device, int hwnd_addr,
         }
         Gui::LocaleCreateFont(io.DisplaySize.x * 0.025f);
     }
-    
+
     if (LauncherCfgInit(true)) {
         if (!Gui::ImplWin32CheckFullScreen())
         {
@@ -1488,11 +1488,11 @@ void GameGuiInit(game_gui_impl impl, int device, int hwnd_addr,
                             SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
                 }
             }
-           
+
         }
 
-       
-        
+
+
         memset(&g_adv_igi_options, 0, sizeof(g_adv_igi_options));
 
         LauncherSettingGet("pauseBGM_06", g_adv_igi_options.th06_pauseBGM);
@@ -1539,7 +1539,7 @@ void GameGuiInit(game_gui_impl impl, int device, int hwnd_addr,
 
         LauncherSettingGet("auto_disable_master", g_adv_igi_options.disable_master_autoly);
         LauncherSettingGet("auto_lock_timer", g_adv_igi_options.enable_lock_timer_autoly);
-        
+
         LauncherSettingGet("auto_map_inf_life_to_no_continue", g_adv_igi_options.map_inf_life_to_no_continue);
         LauncherSettingGet("auto_th06_bg_fix", g_adv_igi_options.th06_bg_fix);
         LauncherSettingGet("auto_th06_fix_seed", g_adv_igi_options.th06_fix_seed);
@@ -1618,7 +1618,7 @@ void GameGuiInit(game_gui_impl impl, int device, int hwnd_addr,
             }
         }
         InitInput();
-        
+
         // if(device){
         //     IDirect3DDevice8* d;
         //    switch (impl) {
@@ -1685,7 +1685,7 @@ void GameGuiEnd(bool draw_cursor)
         return;
     // try to re-hook wnd proc
     // now it's no need since win32 hook method is changed
-    
+
     // Draw cursor if needed
     if (draw_cursor && (g_forceRenderCursor || Gui::ImplWin32CheckFullScreen())) {
         auto& io = ::ImGui::GetIO();
@@ -1862,7 +1862,7 @@ void InitHook(int ver,void* addr1, void* addr2)
             HookIAT(GetModuleHandle(NULL), "xinput1_3.dll", "XInputGetState", XInputGetState_Changed3, (void**)&g_input_opt.g_realXInputGetState3); // th18
             HookIAT(GetModuleHandle(NULL), "xinput1_4.dll", "XInputGetState", XInputGetState_Changed4, (void**)&g_input_opt.g_realXInputGetState4); // th19+
         }
-       
+
         g_enable_l2d = false;
         g_fast_re_opt.enable_fast_retry = false;
         g_input_opt.enable_auto_shoot = false;
@@ -1871,7 +1871,7 @@ void InitHook(int ver,void* addr1, void* addr2)
             LPVOID pTarget;
             HookIAT(GetModuleHandle(NULL), "user32.dll", "GetKeyboardState", GetKeyboardState_Changed, (void**)&g_input_opt.g_realGetKeyboardState);
             HookIAT(GetModuleHandle(NULL), "dinput8.dll", "DirectInput8Create", DirectInput8Create_Changed, (void**)&g_input_opt.g_realDirectInput8Create);
-            
+
             if (g_input_opt.g_keyboardAPI == InputOpt::KeyboardAPI::Force_RawInput || g_input_opt.g_keyboardAPI == InputOpt::KeyboardAPI::Force_dinput8KeyAPI) {
                 LauncherSettingGet("auto_fast_retry", g_fast_re_opt.enable_fast_retry);
                 LauncherSettingGet("auto_auto_shoot", g_input_opt.enable_auto_shoot);
@@ -2240,7 +2240,7 @@ void DisableKeyOpt()
 
         static bool test_opt = false;
         ImGui::SameLine();
-        ImGui::Checkbox("Hook Opt.(test)", &test_opt);
+        ImGui::Checkbox("入力制御機能オプション (テスト)", &test_opt);
 
         if (g_input_opt.g_keyboardAPI == InputOpt::KeyboardAPI::Force_dinput8KeyAPI || g_input_opt.g_keyboardAPI == InputOpt::KeyboardAPI::Force_RawInput)
         {
@@ -2333,7 +2333,7 @@ void KeyHUDOpt()
 {
     ImGui::Checkbox(S(THPRAC_KB_OPEN), &(g_adv_igi_options.show_keyboard_monitor));
     if (g_adv_igi_options.show_keyboard_monitor){
-        
+
         if (!g_record_key_aps){
             if (ImGui::Button(S(THPRAC_KB_RECORD_START))){
                 ClearKeyRecord();
@@ -2347,10 +2347,10 @@ void KeyHUDOpt()
         }
         auto& recorded_aps = GetKeyAPS();
         if (recorded_aps.size() >= 2) {
-            ImGui::PlotLines("##APS", 
-                [](void* data, int idx) -> float { 
+            ImGui::PlotLines("##APS",
+                [](void* data, int idx) -> float {
                     std::vector<uint8_t> &recorded_aps = *(std::vector<uint8_t>*)data;
-                    if (recorded_aps.size() > 600) 
+                    if (recorded_aps.size() > 600)
                         return recorded_aps[recorded_aps.size() - 600 + idx];
                     else return  recorded_aps[idx]; }
                 ,&recorded_aps, recorded_aps.size() > 600 ? 600 : recorded_aps.size(), 0, 0, FLT_MAX, FLT_MAX, { 0, ImGui::GetFrameHeight() * 3.0f });
@@ -3331,7 +3331,7 @@ void TH20_ChangeStone()
                 asm_call_rel<0x1344D0, Thiscall>(thiz, cur_player_type, substone_1); // f
                 asm_call_rel<0x1347D0, Thiscall>(thiz, cur_player_type, substone_2); // nf
 
-                
+
                 *(DWORD*)RVA(0x1BA620) = power;
                 asm_call_rel<0xFACA0, Thiscall>(ppl, -1);
             }
